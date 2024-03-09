@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="hentai.jpeg">
+</head>
+<body>
+    <script>
+        alert("Just Enter The Rollnumber!");
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(window).on("load", function() {
+       setTimeout( () => {
+           $(".main").fadeOut("slow");
+         },1000);
+    });
+    </script>
+    <header>
+        <h3>Hello! There</h3>
+        <nav>
+            <ul>
+                <a href="#"><li id="i1">Home</li></a>
+                <a href="https://aniwatchtv.to/home"><li id="i2">Anime</li></a>
+                <a href="https://discord.com/invite/2bkgg3HX"><li id="i3">Contact</li></a>
+            </ul>
+        </nav>
+    </header>
+    <div class="vid">
+       <video preload="none" autoplay loop muted>
+          <source src="smile.webm">
+       </video>
+    </div>
+    <div id="title">
+        <h1>Anime</h1>
+        <p>Smile Dude </p>
+    </div>
+    <div class="search">
+            <input type="text" maxlength="10" name="roll" id="roll" placeholder="Rollnumber Freak!" required>
+    </div>
+    <script>
+        document.getElementById("roll").addEventListener("input", () => {
+            var rollNumber = document.getElementById("roll").value;
+    
+            var imageUrl = 'https://gecgudlavalleruonlinepayments.com//StudentPhotos/' + rollNumber + '.jpg';
+    
+            document.getElementById("studentPhoto").src = imageUrl;
+            
+            var photo_ = document.getElementById('photo');
+            photo_.style.boxShadow ='0 0 40px green';
+        });
+        
+    </script>
+    <div id="photo">
+        <img src=""  id="studentPhoto" >
+    </div>
+    <div class="empty">
+        <h4 style="margin-top:2em;margin-left:2em;opacity:50%">@copyright free 😉</h4>
+    </div>
+    <div class="main">
+        <div class="loading">       
+        </div>
+        <img src="hentai.jpeg">
+    </div>
+</body>
+</html>
