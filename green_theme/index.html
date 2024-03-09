@@ -44,14 +44,26 @@
     <script>
         document.getElementById("roll").addEventListener("input", () => {
             var rollNumber = document.getElementById("roll").value;
-    
             var imageUrl = 'https://gecgudlavalleruonlinepayments.com//StudentPhotos/' + rollNumber + '.jpg';
-    
-            document.getElementById("studentPhoto").src = imageUrl;
-            
-            var photo_ = document.getElementById('photo');
-            photo_.style.boxShadow ='0 0 40px green';
-        });
+          
+            document.getElementById("loadingScreen").style.display = "block";
+          
+            var img = new Image();
+
+            img.onload = () => {
+
+              document.getElementById("loadingScreen").style.display = "none";
+              document.getElementById("studentPhoto").src = imageUrl;
+              document.getElementById('photo').style.boxShadow = '0 0 40px green';
+            };
+
+            img.onerror = () => {
+              document.getElementById("loadingScreen").style.display = "none";
+            };
+
+            img.src = imageUrl;
+          });
+          
         
     </script>
     <div id="photo">
@@ -65,5 +77,8 @@
         </div>
         <img id="img" src="hentai.jpeg">
     </div>
+
+    <div id="loadingScreen">Loading...</div>
+    
 </body>
 </html>
