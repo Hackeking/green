@@ -225,3 +225,11 @@ li:hover{
         opacity: 30%;
     }
 }
+
+  #loadingScreen {
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
