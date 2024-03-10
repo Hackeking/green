@@ -111,12 +111,13 @@ li:hover{
     ul{
         gap: 2em;
     }
+   
 }
+
 
 .search{
     position: absolute;
     top:27em;
-    padding: 10px 60px;
     border-color: 3px solid green;
     overflow: hidden;
     left: 50%;
@@ -141,7 +142,7 @@ li:hover{
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 5rem;
-    top:100vh;
+    top:37em;
     overflow: hidden;
 }
 #photo img{
@@ -152,11 +153,21 @@ li:hover{
 .empty{
     position: absolute;
     background-color: rgb(0, 128, 0,0.5);
-    top: 125vh;
+    top: 50em;
     height: 80px;
     width: 100%;
 }
-
+@media (min-width:768px) {
+    .empty{
+       top: 100%;
+    }
+}
+@media (min-width:1024px) {
+   .empty{
+    top:50em;
+   }
+   
+}
 .main{
     position: fixed;
     z-index: 1000;
@@ -226,10 +237,19 @@ li:hover{
     }
 }
 
-  #loadingScreen {
+ 
+  #loadingScreen{
     position: absolute;
-    top: 82%;
+    top:30em;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+  }
+  
+  #error{
+    position: absolute;
+    width: 100%;
+    top:30em;
+    justify-content: center;
+    display: flex;
   }
