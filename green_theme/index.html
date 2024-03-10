@@ -45,23 +45,42 @@
         document.getElementById("roll").addEventListener("input", () => {
             var rollNumber = document.getElementById("roll").value;
             var imageUrl = 'https://gecgudlavalleruonlinepayments.com//StudentPhotos/' + rollNumber + '.jpg';
-          
-            document.getElementById("loadingScreen").style.display = "block";
-          
-            var img = new Image();
 
-            img.onload = () => {
-
-              document.getElementById("loadingScreen").style.display = "none";
-              document.getElementById("studentPhoto").src = imageUrl;
-              document.getElementById('photo').style.boxShadow = '0 0 40px green';
-            };
-
-            img.onerror = () => {
-              document.getElementById("loadingScreen").style.display = "none";
-            };
-
-            img.src = imageUrl;
+            if(rollNumber.length === 10){
+                
+                    document.getElementById("loadingScreen").style.display = "block";
+                    document.getElementById("error").style.display = "none";
+                  
+                    var img = new Image();
+        
+                    img.onload = () => {
+   
+                      document.getElementById("loadingScreen").style.display = "none";
+                      document.getElementById("studentPhoto").src = imageUrl;
+                      document.getElementById('photo').style.boxShadow = '0 0 40px green';
+                    };
+        
+                    img.onerror = () => {
+                      var error = document.getElementById('error')
+                      error.innerText = "No Such Image or Connection Lost";
+                      document.getElementById("loadingScreen").style.display = "none";
+                      document.getElementById("error").style.display = "flex";
+                    };
+        
+                    img.src = imageUrl;
+             }
+             else if(rollNumber === ""){
+                var error = document.getElementById("error");
+                error.innerHTML = 'Enter Here!';
+                document.getElementById("loadingScreen").style.display = "none";
+                document.getElementById("error").style.display = "flex";
+             }
+             else{
+                 var error = document.getElementById("error");
+                 error.innerHTML = 'Error! Baka <img width="15px" alt="." src="error.jpeg">';
+                 document.getElementById("loadingScreen").style.display = "none";
+                 document.getElementById("error").style.display = "flex";
+             }
           });
           
         
@@ -79,6 +98,9 @@
     </div>
 
     <div id="loadingScreen">Loading...</div>
+    <div id="error"></div>
+
+
     
 </body>
 </html>
